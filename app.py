@@ -18,6 +18,8 @@ import pandas as pd
 # Define the app layout
 st.title('Diabetes Prediction')
 
+st.write('Input Your Details')
+
 # Create user input fields (modify these based on your model's features)
 input1 = st.number_input('Feature 1', min_value=0.0, max_value=100.0, value=50.0)
 input2 = st.number_input('Feature 2', min_value=0.0, max_value=100.0, value=30.0)
