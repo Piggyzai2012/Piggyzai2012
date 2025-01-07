@@ -49,7 +49,7 @@ if input4:
     try:
         Height = int(input4)/ 100
         # Check if height is within the range 90 to 250
-        if 90 <= height <= 244:
+        if 90 <= input4 <= 244:
             st.write(f'Your height is {height} cm')
         else:
             st.write('Please enter a value between 90 and 244 cm.')
