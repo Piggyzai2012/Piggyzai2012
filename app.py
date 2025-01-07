@@ -21,7 +21,7 @@ st.title('Diabetes Prediction')
 st.write('Input Your Details')
 
 # Create user input fields (modify these based on your model's features)
-input1 = st.number_input('High Blood Pressure', min_value=0.0, max_value=100.0, value=50.0)
+input1 = st.selectbox('Do you have high blood pressure?', ['No', 'Yes'])
 input2 = st.number_input('High Cholesterol', min_value=0.0, max_value=100.0, value=30.0)
 input3 = st.number_input('Cholesterol Check', min_value=0.0, max_value=100.0, value=30.0)
 input4 = st.number_input('Height (cm)', min_value=0.0, max_value=100.0, value=30.0)
