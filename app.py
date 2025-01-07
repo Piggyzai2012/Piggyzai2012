@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 
 # Load the trained model (make sure the model file is in the same directory)
-model = joblib.load('model.pkl')
+# model = joblib.load('model.pkl')
 
 # Define the app layout
 st.title('Machine Learning Model Prediction')
@@ -26,6 +26,6 @@ input2 = st.number_input('Feature 2', min_value=0.0, max_value=100.0, value=30.0
 inputs = np.array([[input1, input2]])
 
 # Button to trigger prediction
-if st.button('Predict'):
-    prediction = model.predict(inputs)  # Replace with your model's prediction method
-    st.write('Predicted Value:', prediction[0])
+# if st.button('Predict'):
+    # prediction = model.predict(inputs)  # Replace with your model's prediction method
+    # st.write('Predicted Value:', prediction[0])
