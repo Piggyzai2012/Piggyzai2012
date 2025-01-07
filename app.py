@@ -21,15 +21,17 @@ st.title('Diabetes Prediction')
 st.write('Input Your Details')
 
 # Create two columns
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(2)
 
 # Create user input fields (modify these based on your model's features)
 input1 = st.selectbox('Do you have high blood pressure?', ['No', 'Yes'])
 input2 = st.number_input('High Cholesterol', min_value=0.0, max_value=100.0, value=30.0)
 input3 = st.number_input('Cholesterol Check', min_value=0.0, max_value=100.0, value=30.0)
 with col1:
-    input4 = st.text_input('Height (cm)', '')
+    input19 = st.text_input('Age', '')
 with col2:
+    input4 = st.text_input('Height (cm)', '')
+with col3:
     input21 = st.text_input('Weight (kg)', '')
 input5 = st.number_input('Smoker', min_value=0.0, max_value=100.0, value=30.0)
 input6 = st.number_input('Stroke', min_value=0.0, max_value=100.0, value=30.0)
@@ -45,7 +47,6 @@ input15 = st.number_input('Mental Health', min_value=0.0, max_value=100.0, value
 input16 = st.number_input('Physical Health', min_value=0.0, max_value=100.0, value=30.0)
 input17 = st.number_input('Diff Walk', min_value=0.0, max_value=100.0, value=30.0)
 input18 = st.number_input('Gender', min_value=0.0, max_value=100.0, value=30.0)
-input19 = st.number_input('Age', min_value=0.0, max_value=100.0, value=30.0)
 input20 = st.number_input('Education', min_value=0.0, max_value=100.0, value=30.0)
 input22 = st.number_input('Income', min_value=0.0, max_value=100.0, value=30.0)
 
@@ -54,9 +55,7 @@ if input4:
     try:
         Height = int(input4)/ 100
         # Check if height is within the range 90 to 250
-        if 0.90 <= Height <= 2.44:
-            st.write(f'Your height is {Height} m')
-        else:
+        if not(0.90 <= Height <= 2.44):
             st.write('Please enter a value between 90 and 244 cm.')
     except ValueError:
         st.write('Please enter a valid number.')
@@ -66,9 +65,7 @@ if input21:
     try:
         input21 = int(input21)
         # Check if height is within the range 23 to 295
-        if 23 <= input21 <= 295:
-            st.write(f'Your weight is {input21} kg')
-        else:
+        if not(23 <= input21 <= 295):
             st.write('Please enter a value between 23 and 295 kg.')
     except ValueError:
         st.write('Please enter a valid number.')
