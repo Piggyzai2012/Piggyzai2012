@@ -47,26 +47,26 @@ input22 = st.number_input('Income', min_value=0.0, max_value=100.0, value=30.0)
 Height = input4/100
 
 HighBP = 1 if input1 == 'Yes' else 0 
-HighChol
-CholCheck
+HighChol = input2
+CholCheck = input3
 BMI = input21 /(Height * Height)
-Smoker
-Stroke
-HeartDiseaseorAttack
-PhysActivity
-Fruits
-Veggies
-HvyAlcoholConsump
-AnyHealthcare
-NoDocbcCost
-GenHlth
-MentHlth
-PhysHlth
-DiffWalk
-Sex
-Age
-Education
-Income
+Smoker = input5
+Stroke = input6
+HeartDiseaseorAttack = input7
+PhysActivity = input8
+Fruits = input9
+Veggies = input10
+HvyAlcoholConsump = input11
+AnyHealthcare = input12
+NoDocbcCost = input13
+GenHlth = input14
+MentHlth = input15
+PhysHlth = input16
+DiffWalk = input17
+Sex = input18
+Age = input19
+Education = input20
+Income = input22
 
 st.write(f'Your BMI is {BMI:.2f}')
 
