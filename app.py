@@ -24,8 +24,8 @@ st.write('Input Your Details')
 input1 = st.selectbox('Do you have high blood pressure?', ['No', 'Yes'])
 input2 = st.number_input('High Cholesterol', min_value=0.0, max_value=100.0, value=30.0)
 input3 = st.number_input('Cholesterol Check', min_value=0.0, max_value=100.0, value=30.0)
-input4 = st.number_input('Height (cm)', min_value=90, max_value=244)
-input21 = st.number_input('Weight (kg)', min_value=23, max_value=295)
+input4 = st.text_input('Height (cm)', '')
+input21 = st.text_input('Weight (kg)', '')
 input5 = st.number_input('Smoker', min_value=0.0, max_value=100.0, value=30.0)
 input6 = st.number_input('Stroke', min_value=0.0, max_value=100.0, value=30.0)
 input7 = st.number_input('Heart Disease or Attack', min_value=0.0, max_value=100.0, value=30.0)
@@ -44,7 +44,30 @@ input19 = st.number_input('Age', min_value=0.0, max_value=100.0, value=30.0)
 input20 = st.number_input('Education', min_value=0.0, max_value=100.0, value=30.0)
 input22 = st.number_input('Income', min_value=0.0, max_value=100.0, value=30.0)
 
-Height = input4/100
+if input4:
+    # Try to convert input to integer
+    try:
+        Height = int(input4)/ 100
+        # Check if height is within the range 90 to 250
+        if 90 <= height <= 244:
+            st.write(f'Your height is {height} cm')
+        else:
+            st.write('Please enter a value between 90 and 244 cm.')
+    except ValueError:
+        st.write('Please enter a valid number.')
+
+if input21:
+    # Try to convert input to integer
+    try:
+        input21 = int(input21)
+        # Check if height is within the range 23 to 295
+        if 23 <= input21 <= 295:
+            st.write(f'Your weight is {height} kg')
+        else:
+            st.write('Please enter a value between 23 and 295 kg.')
+    except ValueError:
+        st.write('Please enter a valid number.')
+        
 
 HighBP = 1 if input1 == 'Yes' else 0 
 HighChol = input2
