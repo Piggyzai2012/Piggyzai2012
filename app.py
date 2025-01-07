@@ -21,11 +21,36 @@ st.title('Diabetes Prediction')
 st.write('Input Your Details')
 
 # Create user input fields (modify these based on your model's features)
-input1 = st.number_input('Feature 1', min_value=0.0, max_value=100.0, value=50.0)
-input2 = st.number_input('Feature 2', min_value=0.0, max_value=100.0, value=30.0)
+input1 = st.number_input('High Blood Pressure', min_value=0.0, max_value=100.0, value=50.0)
+input2 = st.number_input('High Cholesterol', min_value=0.0, max_value=100.0, value=30.0)
+input3 = st.number_input('Cholesterol Check', min_value=0.0, max_value=100.0, value=30.0)
+input4 = st.number_input('Height (cm)', min_value=0.0, max_value=100.0, value=30.0)
+input21 = st.number_input('Weight (kg)', min_value=0.0, max_value=100.0, value=30.0)
+input5 = st.number_input('Smoker', min_value=0.0, max_value=100.0, value=30.0)
+input6 = st.number_input('Stroke', min_value=0.0, max_value=100.0, value=30.0)
+input7 = st.number_input('Heart Disease or Attack', min_value=0.0, max_value=100.0, value=30.0)
+input8 = st.number_input('PhysActivity', min_value=0.0, max_value=100.0, value=30.0)
+input9 = st.number_input('Fruits', min_value=0.0, max_value=100.0, value=30.0)
+input10 = st.number_input('Veggies', min_value=0.0, max_value=100.0, value=30.0)
+input11 = st.number_input('Heavy Alcohol Consumption', min_value=0.0, max_value=100.0, value=30.0)
+input12 = st.number_input('Any Health care', min_value=0.0, max_value=100.0, value=30.0)
+input13 = st.number_input('No Doctor because Cost', min_value=0.0, max_value=100.0, value=30.0)
+input14 = st.number_input('General Health', min_value=0.0, max_value=100.0, value=30.0)
+input15 = st.number_input('Mental Health', min_value=0.0, max_value=100.0, value=30.0)
+input16 = st.number_input('Physical Health', min_value=0.0, max_value=100.0, value=30.0)
+input17 = st.number_input('Diff Walk', min_value=0.0, max_value=100.0, value=30.0)
+input18 = st.number_input('Gender', min_value=0.0, max_value=100.0, value=30.0)
+input19 = st.number_input('Age', min_value=0.0, max_value=100.0, value=30.0)
+input20 = st.number_input('Education', min_value=0.0, max_value=100.0, value=30.0)
+input22 = st.number_input('Income', min_value=0.0, max_value=100.0, value=30.0)
+
+Height = input4/100
+BMI = input21 /(Height * Height)
+
+st.write(f'Your BMI is {BMI:.2f}')
 
 # Combine inputs into a single array for prediction
-inputs = np.array([[input1, input2]])
+inputs = np.array([[input1, input2, input3, BMI, input5, input6, input7, input8, input9, input10, input11, input12, input13, input14, input15, input16, input17, input18, input19, input20, input22]])
 
 # Button to trigger prediction
 # if st.button('Predict'):
