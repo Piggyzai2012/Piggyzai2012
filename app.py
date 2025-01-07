@@ -16,7 +16,7 @@ import pandas as pd
 # model = joblib.load('model.pkl')
 
 # Define the app layout
-st.title('Machine Learning Model Prediction')
+st.title('Diabetes Prediction')
 
 # Create user input fields (modify these based on your model's features)
 input1 = st.number_input('Feature 1', min_value=0.0, max_value=100.0, value=50.0)
