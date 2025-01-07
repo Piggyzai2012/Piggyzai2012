@@ -62,7 +62,7 @@ if input21:
         input21 = int(input21)
         # Check if height is within the range 23 to 295
         if 23 <= input21 <= 295:
-            st.write(f'Your weight is {height} kg')
+            st.write(f'Your weight is {input21} kg')
         else:
             st.write('Please enter a value between 23 and 295 kg.')
     except ValueError:
