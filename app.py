@@ -45,12 +45,33 @@ input20 = st.number_input('Education', min_value=0.0, max_value=100.0, value=30.
 input22 = st.number_input('Income', min_value=0.0, max_value=100.0, value=30.0)
 
 Height = input4/100
+
+HighBP = 1 if input1 == 'Yes' else 0 
+HighChol
+CholCheck
 BMI = input21 /(Height * Height)
+Smoker
+Stroke
+HeartDiseaseorAttack
+PhysActivity
+Fruits
+Veggies
+HvyAlcoholConsump
+AnyHealthcare
+NoDocbcCost
+GenHlth
+MentHlth
+PhysHlth
+DiffWalk
+Sex
+Age
+Education
+Income
 
 st.write(f'Your BMI is {BMI:.2f}')
 
 # Combine inputs into a single array for prediction
-inputs = np.array([[input1, input2, input3, BMI, input5, input6, input7, input8, input9, input10, input11, input12, input13, input14, input15, input16, input17, input18, input19, input20, input22]])
+inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
 
 # Button to trigger prediction
 # if st.button('Predict'):
