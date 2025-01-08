@@ -13,7 +13,8 @@ import numpy as np
 import pandas as pd
 
 # Load the trained model (make sure the model file is in the same directory)
-model = joblib.load('diabetes_model.pkl')
+with open('diabetes_model.pkl', 'rb') as model_file:
+    model = pickle.load(model_file)
 
 # Define the app layout
 st.title('Diabetes Prediction')
