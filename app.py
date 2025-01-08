@@ -103,20 +103,20 @@ HighBP = 1 if input1 == 'Yes' else 0
 HighChol = 1 if input2 == 'Yes' else 0 
 CholCheck = 1 if input3 == 'Yes' else 0 
 BMI = input21 /(Height * Height)
-Smoker = input5
-Stroke = input6
-HeartDiseaseorAttack = input7
-PhysActivity = input8
-Fruits = input9
-Veggies = input10
-HvyAlcoholConsump = input11
-AnyHealthcare = input12
-NoDocbcCost = input13
+Smoker = 1 if input5 == 'Yes' else 0 
+Stroke = 1 if input6 == 'Yes' else 0 
+HeartDiseaseorAttack = 1 if input7 == 'Yes' else 0 
+PhysActivity = 1 if input8 == 'Yes' else 0 
+Fruits = 1 if input9 == 'Yes' else 0 
+Veggies = 1 if input10 == 'Yes' else 0 
+HvyAlcoholConsump = 1 if input11 == 'Yes' else 0 
+AnyHealthcare = 1 if input12 == 'Yes' else 0 
+NoDocbcCost = 1 if input13 == 'Yes' else 0 
 GenHlth = health_mapping.get(input14)
 MentHlth = input15
 PhysHlth = input16
-DiffWalk = input17
-Sex = input18
+DiffWalk = 1 if input17 == 'Yes' else 0 
+Sex = 1 if input18 == 'Male' else 2 
 Age = input19
 Education = education_mapping.get(input20)
 Income = income_mapping.get(input22)
@@ -124,7 +124,7 @@ Income = income_mapping.get(input22)
 st.write(f'Your BMI is {BMI:.2f}')
 st.write(f'Your GenHlth is {GenHlth:.2f}')
 st.write(f'Your MentHlth is {MentHlth:.2f}')
-st.write('Your Income is ', Income)
+st.write('Your Sex is ', Sex)
 st.write('Your Education is ', Education)
 
 # Combine inputs into a single array for prediction
