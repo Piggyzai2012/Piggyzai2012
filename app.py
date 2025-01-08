@@ -37,10 +37,10 @@ with col2:
     input21 = st.text_input('Weight (kg)', value='75')
     input22 = st.selectbox('Annual Income', ['Less than $10,000', '$10,000 to less than $15,000','$15,000 to less than $20,000','$20,000 to less than $25,000','$25,000 to less than $35,000',
                                       '$35,000 to less than $50,000','$50,000 to less than $75,000','$75,000 or more'])
- with col3:   
     input5 = st.selectbox('Have you smoked at least 100 cigarettes in your entire life?', ['No', 'Yes'])
     input6 = st.selectbox('Do you have stroke', ['No', 'Yes'])
     input7 = st.selectbox('Do you have coronary heart disease (CHD) or myocardial infarction (MI)', ['No', 'Yes'])
+ with col3: 
     input8 = st.selectbox('Did you engage in physical activity or exercise during the past 30 days', ['No', 'Yes'])
     input17 = st.selectbox('Do you have serious difficulty walking or climbing stairs?', ['No', 'Yes'])
     input9 = st.selectbox('Do you consume fruit 1 or more times per day?', ['No', 'Yes'])
