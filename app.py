@@ -12,7 +12,6 @@ import os
 import joblib
 import numpy as np
 import pandas as pd
-import matplotlib as plt
 from scipy.stats import chi2_contingency
 from scipy.stats import pointbiserialr
 from sklearn.preprocessing import MinMaxScaler
