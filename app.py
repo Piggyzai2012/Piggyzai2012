@@ -47,9 +47,9 @@ input10 = st.selectbox('Do you consume vegetables 1 or more times per day?', ['N
 input11 = st.selectbox('Are you heavy drinkers?', ['No', 'Yes'])
 input12 = st.selectbox('Do you have any kind of health care coverage?', ['No', 'Yes'])
 input13 = st.selectbox('Was there a time in the past 12 months when you needed to see a doctor but could not because of cost?', ['No', 'Yes'])
-input14 = st.selectbox('Would you say that in general your health is', min_value=0.0, max_value=100.0, value=30.0)
-input15 = st.selectbox('How many days during the past 30 days was your mental health not good?', min_value=0.0, max_value=100.0, value=30.0)
-input16 = st.selectbox('How many days during the past 30 days was your physical health not good?', min_value=0.0, max_value=100.0, value=30.0)
+input14 = st.radio('Would you say that in general your health is', options=['Excellent','Very good','Good','Fair','Poor'])
+input15 = st.slider('How many days during the past 30 days was your mental health not good?', min_value=0, max_value=30, value=15.0)
+input16 = st.slider('How many days during the past 30 days was your physical health not good?', min_value=0, max_value=30, value=15.0)
 input17 = st.selectbox('Do you have serious difficulty walking or climbing stairs?', ['No', 'Yes'])
 
 if input4:
@@ -71,7 +71,15 @@ if input21:
             st.write('Please enter a value between 23 and 295 kg.')
     except ValueError:
         st.write('Please enter a valid number.')
-        
+
+health_mapping = {
+    'Excellent': 5,
+    'Very good': 4,
+    'Good': 3,
+    'Fair': 2,
+    'Poor': 1
+}
+
 income_mapping = {
     'Less than $10,000': 1,
     '$10,000 to less than $15,000': 2,
@@ -104,7 +112,7 @@ Veggies = input10
 HvyAlcoholConsump = input11
 AnyHealthcare = input12
 NoDocbcCost = input13
-GenHlth = input14
+GenHlth = health_mapping.get(input14)
 MentHlth = input15
 PhysHlth = input16
 DiffWalk = input17
