@@ -161,7 +161,7 @@ inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDisea
  
 model_file = 'diabetes_model.joblib'
 if os.path.exists(model_file):
-    model = joblib.load(model_file)
+    model = joblib.load(model_file, mmap_mode='r')
     st.write("Model loaded successfully!")
 else:
     st.write(f"Error: {model_file} not found. Please ensure the file is in the correct location.")
