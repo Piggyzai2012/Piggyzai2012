@@ -31,18 +31,25 @@ input2 = st.selectbox('Do you have high cholesterol?', ['No', 'Yes'])
 input3 = st.selectbox('Cholesterol check within past five years?', ['No', 'Yes'])
 with col1:
     input19 = st.text_input('Age', '')
+    input4 = st.text_input('Height (cm)', '')
+    input20 = st.selectbox('Education', ['Never attended school or only kindergarten', 'Grades 1 through 8 (Elementary)','Grades 9 through 11 (Some high school)','Grade 12 or GED (High school graduate)',
+                                         'College 1 year to 3 years (Some college or technical school)','College 4 years or more (College graduate)'])
 with col2:
     input18 = st.selectbox('Gender', ['Male', 'Female'])
-
-with col3:
-    input4 = st.text_input('Height (cm)', '')
-with col4:
     input21 = st.text_input('Weight (kg)', '')
+    input22 = st.selectbox('Income', ['Less than $10,000', '$10,000 to less than $15,000','$15,000 to less than $20,000','$20,000 to less than $25,000','$25,000 to less than $35,000',
+                                      '$35,000 to less than $50,000','$50,000 to less than $75,000','$75,000 or more'])
+# with col3:
+#     input4 = st.text_input('Height (cm)', '')
+# with col4:
+#     input21 = st.text_input('Weight (kg)', '')
 
-with col5:
-    input20 = st.selectbox('Education', min_value=0.0, max_value=100.0, value=30.0)
-with col6:
-    input22 = st.selectbox('Income', min_value=0.0, max_value=100.0, value=30.0)
+# with col5:
+#     input20 = st.selectbox('Education', ['Never attended school or only kindergarten', 'Grades 1 through 8 (Elementary)','Grades 9 through 11 (Some high school)','Grade 12 or GED (High school graduate)',
+#                                          'College 1 year to 3 years (Some college or technical school)','College 4 years or more (College graduate)'])
+# with col6:
+#     input22 = st.selectbox('Income', ['Less than $10,000', '$10,000 to less than $15,000','$15,000 to less than $20,000','$20,000 to less than $25,000','$25,000 to less than $35,000',
+#                                       '$35,000 to less than $50,000','$50,000 to less than $75,000','$75,000 or more'])
     
 input5 = st.selectbox('Have you smoked at least 100 cigarettes in your entire life?', ['No', 'Yes'])
 input6 = st.selectbox('Do you have stroke', ['No', 'Yes'])
