@@ -20,7 +20,8 @@ st.title('Diabetes Prediction')
 st.write('Input Your Details')
 
 # Create two columns
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns([2, 2, 5])  # Adjust the width of columns as necessary
+
 
 # Create user input fields (modify these based on your model's features)
 input1 = st.selectbox('Do you have high blood pressure?', ['No', 'Yes'])
@@ -31,25 +32,28 @@ with col1:
     input4 = st.text_input('Height (cm)', value='180')
     input20 = st.selectbox('Education Level', ['Never attended school or only kindergarten', 'Grades 1 through 8 (Elementary)','Grades 9 through 11 (Some high school)','Grade 12 or GED (High school graduate)',
                                          'College 1 year to 3 years (Some college or technical school)','College 4 years or more (College graduate)'])
+    input1 = st.selectbox('Do you have high blood pressure?', ['No', 'Yes'])
+    input2 = st.selectbox('Do you have high cholesterol?', ['No', 'Yes'])
+    input3 = st.selectbox('Cholesterol check within past five years?', ['No', 'Yes'])
 with col2:
     input18 = st.selectbox('Gender', ['Male', 'Female'])
     input21 = st.text_input('Weight (kg)', value='75')
     input22 = st.selectbox('Annual Income', ['Less than $10,000', '$10,000 to less than $15,000','$15,000 to less than $20,000','$20,000 to less than $25,000','$25,000 to less than $35,000',
                                       '$35,000 to less than $50,000','$50,000 to less than $75,000','$75,000 or more'])
-    
-input5 = st.selectbox('Have you smoked at least 100 cigarettes in your entire life?', ['No', 'Yes'])
-input6 = st.selectbox('Do you have stroke', ['No', 'Yes'])
-input7 = st.selectbox('Do you have coronary heart disease (CHD) or myocardial infarction (MI)', ['No', 'Yes'])
-input8 = st.selectbox('Did you engage in physical activity or exercise during the past 30 days', ['No', 'Yes'])
-input17 = st.selectbox('Do you have serious difficulty walking or climbing stairs?', ['No', 'Yes'])
-input9 = st.selectbox('Do you consume fruit 1 or more times per day?', ['No', 'Yes'])
-input10 = st.selectbox('Do you consume vegetables 1 or more times per day?', ['No', 'Yes'])
-input11 = st.selectbox('Are you heavy drinkers?', ['No', 'Yes'])
-input12 = st.selectbox('Do you have any kind of health care coverage?', ['No', 'Yes'])
-input13 = st.selectbox('Was there a time in the past 12 months when you needed to see a doctor but could not because of cost?', ['No', 'Yes'])
-input14 = st.radio('Would you say that in general your health is', options=['Excellent','Very good','Good','Fair','Poor'])
-input15 = st.slider('How many days during the past 30 days was your mental health not good?', min_value=0, max_value=30, value=15)
-input16 = st.slider('How many days during the past 30 days was your physical health not good?', min_value=0, max_value=30, value=15)
+ with col3:   
+    input5 = st.selectbox('Have you smoked at least 100 cigarettes in your entire life?', ['No', 'Yes'])
+    input6 = st.selectbox('Do you have stroke', ['No', 'Yes'])
+    input7 = st.selectbox('Do you have coronary heart disease (CHD) or myocardial infarction (MI)', ['No', 'Yes'])
+    input8 = st.selectbox('Did you engage in physical activity or exercise during the past 30 days', ['No', 'Yes'])
+    input17 = st.selectbox('Do you have serious difficulty walking or climbing stairs?', ['No', 'Yes'])
+    input9 = st.selectbox('Do you consume fruit 1 or more times per day?', ['No', 'Yes'])
+    input10 = st.selectbox('Do you consume vegetables 1 or more times per day?', ['No', 'Yes'])
+    input11 = st.selectbox('Are you heavy drinkers?', ['No', 'Yes'])
+    input12 = st.selectbox('Do you have any kind of health care coverage?', ['No', 'Yes'])
+    input13 = st.selectbox('Was there a time in the past 12 months when you needed to see a doctor but could not because of cost?', ['No', 'Yes'])
+    input14 = st.radio('Would you say that in general your health is', options=['Excellent','Very good','Good','Fair','Poor'])
+    input15 = st.slider('How many days during the past 30 days was your mental health not good?', min_value=0, max_value=30, value=15)
+    input16 = st.slider('How many days during the past 30 days was your physical health not good?', min_value=0, max_value=30, value=15)
 
 if input19.isdigit():
     # Try to convert input to integer
