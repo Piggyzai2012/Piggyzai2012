@@ -67,7 +67,7 @@ if input21:
     try:
         input21 = int(input21)
         # Check if weight is within the range 23 to 295
-        if not(23 <= Weight <= 295):
+        if not(23 <= input21 <= 295):
             st.write('Please enter a value between 23 and 295 kg.')
     except ValueError:
         st.write('Please enter a valid number.')
