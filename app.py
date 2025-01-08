@@ -173,4 +173,3 @@ if st.button('Predict'):
     else:
         st.write("The model predicts: **No**, Low Risk of Heart Disease.")
     
-    st.write(f"Model Accuracy: **{accuracy * 100:.2f}%**")
