@@ -28,12 +28,12 @@ input3 = st.selectbox('Cholesterol check within past five years?', ['No', 'Yes']
 with col1:
     input19 = st.text_input('Age', value='18')
     input4 = st.text_input('Height (cm)', value='180')
-    input20 = st.selectbox('Education', ['Never attended school or only kindergarten', 'Grades 1 through 8 (Elementary)','Grades 9 through 11 (Some high school)','Grade 12 or GED (High school graduate)',
+    input20 = st.selectbox('Education Level', ['Never attended school or only kindergarten', 'Grades 1 through 8 (Elementary)','Grades 9 through 11 (Some high school)','Grade 12 or GED (High school graduate)',
                                          'College 1 year to 3 years (Some college or technical school)','College 4 years or more (College graduate)'])
 with col2:
     input18 = st.selectbox('Gender', ['Male', 'Female'])
     input21 = st.text_input('Weight (kg)', value='75')
-    input22 = st.selectbox('Income', ['Less than $10,000', '$10,000 to less than $15,000','$15,000 to less than $20,000','$20,000 to less than $25,000','$25,000 to less than $35,000',
+    input22 = st.selectbox('Annual Income', ['Less than $10,000', '$10,000 to less than $15,000','$15,000 to less than $20,000','$20,000 to less than $25,000','$25,000 to less than $35,000',
                                       '$35,000 to less than $50,000','$50,000 to less than $75,000','$75,000 or more'])
     
 input5 = st.selectbox('Have you smoked at least 100 cigarettes in your entire life?', ['No', 'Yes'])
