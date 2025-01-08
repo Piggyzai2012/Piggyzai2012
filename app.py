@@ -12,22 +12,6 @@ import os
 import joblib
 import numpy as np
 import pandas as pd
-from scipy.stats import chi2_contingency
-from scipy.stats import pointbiserialr
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import KFold
-from imblearn.over_sampling import SMOTE
-
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import confusion_matrix, classification_report, ConfusionMatrixDisplay
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_val_predict, StratifiedKFold
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
-import seaborn as sns
 
 # Define the app layout
 st.title('Diabetes Prediction')
@@ -175,26 +159,10 @@ Income = income_mapping.get(input22)
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
  
-# model_file = 'diabetes_model.pkl'
-# model = joblib.load(model_file)
+model_file = 'diabetes_model.pkl'
+model = joblib.load(model_file)
 
 df = pd.read_csv('Diabetes_Data_Processed.csv')
-
-# Preprocess the data (this is an example, adjust according to your dataset)
-X = df.drop('Diabetes_Binary', axis=1)
-y = df['Diabetes_Binary']
-
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Train the model
-model = LogisticRegression(max_iter=1000)
-model.fit(X_train, y_train)
-
-y_pred = model.predict(X_test)
-
-# Calculate metrics
-accuracy = accuracy_score(y_test, y_pred)
 
 # Button to trigger prediction
 if st.button('Predict'):
