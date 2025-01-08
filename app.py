@@ -42,6 +42,7 @@ input5 = st.selectbox('Have you smoked at least 100 cigarettes in your entire li
 input6 = st.selectbox('Do you have stroke', ['No', 'Yes'])
 input7 = st.selectbox('Do you have coronary heart disease (CHD) or myocardial infarction (MI)', ['No', 'Yes'])
 input8 = st.selectbox('Did you engage in physical activity or exercise during the past 30 days', ['No', 'Yes'])
+input17 = st.selectbox('Do you have serious difficulty walking or climbing stairs?', ['No', 'Yes'])
 input9 = st.selectbox('Do you consume fruit 1 or more times per day?', ['No', 'Yes'])
 input10 = st.selectbox('Do you consume vegetables 1 or more times per day?', ['No', 'Yes'])
 input11 = st.selectbox('Are you heavy drinkers?', ['No', 'Yes'])
@@ -50,7 +51,6 @@ input13 = st.selectbox('Was there a time in the past 12 months when you needed t
 input14 = st.radio('Would you say that in general your health is', options=['Excellent','Very good','Good','Fair','Poor'])
 input15 = st.slider('How many days during the past 30 days was your mental health not good?', min_value=0, max_value=30, value=15)
 input16 = st.slider('How many days during the past 30 days was your physical health not good?', min_value=0, max_value=30, value=15)
-input17 = st.selectbox('Do you have serious difficulty walking or climbing stairs?', ['No', 'Yes'])
 
 if input19:
     # Try to convert input to integer
@@ -81,7 +81,36 @@ if input21:
             st.write('Please enter a value between 23 and 295 kg.')
     except ValueError:
         st.write('Please enter a valid number.')
-
+        
+try:
+    # Determine the age group
+    if 18 <= input19 <= 24:
+        age = 1
+    elif 25 <= input19 <= 29:
+        age_group = 2
+    elif 30 <= input19 <= 34:
+        age_group = 3
+    elif 35 <= input19 <= 39:
+        age_group = 4
+    elif 40 <= input19 <= 44:
+        age_group = 5
+    elif 45 <= input19 <= 49:
+        age_group = 6
+    elif 50 <= input19 <= 54:
+        age_group = 7
+    elif 55 <= input19 <= 59:
+        age_group = 8
+    elif 60 <= input19 <= 64:
+        age_group = 9
+    elif 65 <= input19 <= 69:
+        age_group = 10
+    elif 70 <= input19 <= 74:
+        age_group = 11
+    elif 75 <= input19 <= 79:
+        age_group = 12
+    elif input19 >= 80:
+        age_group = 13
+        
 health_mapping = {
     'Excellent': 5,
     'Very good': 4,
@@ -127,15 +156,11 @@ MentHlth = input15
 PhysHlth = input16
 DiffWalk = 1 if input17 == 'Yes' else 0 
 Sex = 1 if input18 == 'Male' else 2 
-Age = input19
+# Age = input19
 Education = education_mapping.get(input20)
 Income = income_mapping.get(input22)
 
-st.write(f'Your BMI is {BMI:.2f}')
-st.write(f'Your GenHlth is {GenHlth:.2f}')
-st.write(f'Your MentHlth is {MentHlth:.2f}')
-st.write('Your Sex is ', Sex)
-st.write('Your Education is ', Education)
+# st.write(f'Your Age is ', Age)
 
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
