@@ -24,9 +24,6 @@ col1, col2, col3 = st.columns([2, 2, 5])  # Adjust the width of columns as neces
 
 
 # Create user input fields (modify these based on your model's features)
-input1 = st.selectbox('Do you have high blood pressure?', ['No', 'Yes'])
-input2 = st.selectbox('Do you have high cholesterol?', ['No', 'Yes'])
-input3 = st.selectbox('Cholesterol check within past five years?', ['No', 'Yes'])
 with col1:
     input19 = st.text_input('Age', value='18')
     input4 = st.text_input('Height (cm)', value='180')
