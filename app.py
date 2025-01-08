@@ -160,11 +160,8 @@ Income = income_mapping.get(input22)
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
  
 model_file = 'diabetes_model.joblib'
-if os.path.exists(model_file):
-    model = joblib.load(model_file, mmap_mode='r')
-    st.write("Model loaded successfully!")
-else:
-    st.write(f"Error: {model_file} not found. Please ensure the file is in the correct location.")
+model = joblib.load(model_file, mmap_mode='r')
+
     
 # Button to trigger prediction
 if st.button('Predict'):
@@ -174,3 +171,5 @@ if st.button('Predict'):
         st.write("The model predicts: **Yes**, High Risk of Heart Disease.")
     else:
         st.write("The model predicts: **No**, Low Risk of Heart Disease.")
+    
+    st.write(f"Model Accuracy: **{accuracy * 100:.2f}%**")
