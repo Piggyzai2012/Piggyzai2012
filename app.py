@@ -8,7 +8,7 @@ Original file is located at
 """
 
 import streamlit as st
-import pickle
+import os
 import joblib
 import numpy as np
 import pandas as pd
@@ -159,8 +159,12 @@ Income = income_mapping.get(input22)
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
  
-# # Load the model from the saved .pkl file
-# model = joblib.load('diabetes_model.pkl')
+model_file = 'diabetes_model.pkl'
+if os.path.exists(model_file):
+    model = joblib.load(model_file)
+    st.write("Model loaded successfully!")
+else:
+    st.write(f"Error: {model_file}
     
 # Button to trigger prediction
 if st.button('Predict'):
