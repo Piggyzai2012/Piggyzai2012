@@ -65,9 +65,9 @@ if input4:
 if input21:
     # Try to convert input to integer
     try:
-        input21 = int(input21)
-        # Check if height is within the range 23 to 295
-        if not(23 <= input21 <= 295):
+        Weight = int(input21)
+        # Check if weight is within the range 23 to 295
+        if not(23 <= Weight <= 295):
             st.write('Please enter a value between 23 and 295 kg.')
     except ValueError:
         st.write('Please enter a valid number.')
@@ -102,7 +102,7 @@ education_mapping = {
 HighBP = 1 if input1 == 'Yes' else 0 
 HighChol = 1 if input2 == 'Yes' else 0 
 CholCheck = 1 if input3 == 'Yes' else 0 
-BMI = input21 /(Height * Height)
+BMI = Weight /(Height * Height)
 Smoker = input5
 Stroke = input6
 HeartDiseaseorAttack = input7
@@ -122,6 +122,10 @@ Education = education_mapping.get(input20)
 Income = income_mapping.get(input22)
 
 st.write(f'Your BMI is {BMI:.2f}')
+st.write(f'Your BMI is {GenHlth:.2f}')
+st.write(f'Your BMI is {MentHlth:.2f}')
+st.write(f'Your BMI is {DiffWalk:.2f}')
+st.write(f'Your BMI is {Education:.2f}')
 
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
