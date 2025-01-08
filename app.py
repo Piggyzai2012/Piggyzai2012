@@ -122,10 +122,10 @@ Education = education_mapping.get(input20)
 Income = income_mapping.get(input22)
 
 st.write(f'Your BMI is {BMI:.2f}')
-st.write(f'Your BMI is {GenHlth:.2f}')
-st.write(f'Your BMI is {MentHlth:.2f}')
-st.write(f'Your BMI is {DiffWalk:.2f}')
-st.write(f'Your BMI is {Education:.2f}')
+st.write(f'Your GenHlth is {GenHlth:.2f}')
+st.write(f'Your MentHlth is {MentHlth:.2f}')
+st.write('Your Income is ', Income)
+st.write('Your Education is ', Education)
 
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
