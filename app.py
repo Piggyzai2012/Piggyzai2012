@@ -22,6 +22,8 @@ st.write('Input Your Details')
 
 # Create two columns
 col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
+col5, col6 = st.columns(2)
 
 # Create user input fields (modify these based on your model's features)
 input1 = st.selectbox('Do you have high blood pressure?', ['No', 'Yes'])
@@ -29,13 +31,19 @@ input2 = st.selectbox('Do you have high cholesterol?', ['No', 'Yes'])
 input3 = st.selectbox('Cholesterol check within past five years?', ['No', 'Yes'])
 with col1:
     input19 = st.text_input('Age', '')
-    input4 = st.text_input('Height (cm)', '')
-    input20 = st.selectbox('Education', min_value=0.0, max_value=100.0, value=30.0)
 with col2:
     input18 = st.selectbox('Gender', ['Male', 'Female'])
-    input21 = st.text_input('Weight (kg)', '')
-    input22 = st.selectbox('Income', min_value=0.0, max_value=100.0, value=30.0)
 
+with col3:
+    input4 = st.text_input('Height (cm)', '')
+with col4:
+    input21 = st.text_input('Weight (kg)', '')
+
+with col5:
+    input20 = st.selectbox('Education', min_value=0.0, max_value=100.0, value=30.0)
+with col6:
+    input22 = st.selectbox('Income', min_value=0.0, max_value=100.0, value=30.0)
+    
 input5 = st.selectbox('Have you smoked at least 100 cigarettes in your entire life?', ['No', 'Yes'])
 input6 = st.selectbox('Do you have stroke', ['No', 'Yes'])
 input7 = st.selectbox('Do you have coronary heart disease (CHD) or myocardial infarction (MI)', ['No', 'Yes'])
