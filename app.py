@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 
 # Load the trained model (make sure the model file is in the same directory)
-# model = joblib.load('model.pkl')
+model = joblib.load('diabetes_model.pkl')
 
 # Define the app layout
 st.title('Diabetes Prediction')
