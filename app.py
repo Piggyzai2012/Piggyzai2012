@@ -111,8 +111,8 @@ if input19:
             age_group = 12
         elif input19 >= 80:
             age_group = 13
-except ValueError:
-    st.write("Please enter a valid number for age.")
+    except ValueError:
+        st.write("Please enter a valid number for age.")
         
 health_mapping = {
     'Excellent': 5,
