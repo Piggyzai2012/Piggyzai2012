@@ -59,31 +59,31 @@ if input19.isdigit():
         
         if 18 <= input19 <= 150:
             if 18 <= input19 <= 24:
-                age = 1
+                Age = 1
             elif 25 <= input19 <= 29:
-                age_group = 2
+                Age = 2
             elif 30 <= input19 <= 34:
-                age_group = 3
+                Age = 3
             elif 35 <= input19 <= 39:
-                age_group = 4
+                Age = 4
             elif 40 <= input19 <= 44:
-                age_group = 5
+                Age = 5
             elif 45 <= input19 <= 49:
-                age_group = 6
+                Age = 6
             elif 50 <= input19 <= 54:
-                age_group = 7
+                Age = 7
             elif 55 <= input19 <= 59:
-                age_group = 8
+                Age = 8
             elif 60 <= input19 <= 64:
-                age_group = 9
+                Age = 9
             elif 65 <= input19 <= 69:
-                age_group = 10
+                Age = 10
             elif 70 <= input19 <= 74:
-                age_group = 11
+                Age = 11
             elif 75 <= input19 <= 79:
-                age_group = 12
+                Age = 12
             elif input19 >= 80:
-                age_group = 13
+                Age = 13
         else:
             st.write("Please enter an age between 18 and 150.")
     except ValueError:
