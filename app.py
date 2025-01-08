@@ -159,9 +159,10 @@ Income = income_mapping.get(input22)
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
  
-model_file = 'diabetes_model.joblib'
-model = joblib.load(model_file, mmap_mode='r')
+model_file = 'diabetes_model.pkl'
+model = joblib.load(model_file)
 
+df = pd.read_csv('Diabetes_Data_Processed.csv')
     
 # Button to trigger prediction
 if st.button('Predict'):
