@@ -57,7 +57,7 @@ if input19:
     try:
         input19 = int(input19)
         # Check if age is within the range 18 to 150
-        if not(18 <= Height <= 150):
+        if not(18 <= input19 <= 150):
             st.write('Please enter a value between 18 and 150.')
     except ValueError:
         st.write('Please enter a valid number.')
