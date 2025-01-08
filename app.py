@@ -48,8 +48,8 @@ input11 = st.selectbox('Are you heavy drinkers?', ['No', 'Yes'])
 input12 = st.selectbox('Do you have any kind of health care coverage?', ['No', 'Yes'])
 input13 = st.selectbox('Was there a time in the past 12 months when you needed to see a doctor but could not because of cost?', ['No', 'Yes'])
 input14 = st.radio('Would you say that in general your health is', options=['Excellent','Very good','Good','Fair','Poor'])
-input15 = st.slider('How many days during the past 30 days was your mental health not good?', min_value=0, max_value=30, value=15.0)
-input16 = st.slider('How many days during the past 30 days was your physical health not good?', min_value=0, max_value=30, value=15.0)
+input15 = st.slider('How many days during the past 30 days was your mental health not good?', min_value=0, max_value=30, value=15)
+input16 = st.slider('How many days during the past 30 days was your physical health not good?', min_value=0, max_value=30, value=15)
 input17 = st.selectbox('Do you have serious difficulty walking or climbing stairs?', ['No', 'Yes'])
 
 if input4:
