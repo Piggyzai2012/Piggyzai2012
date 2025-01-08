@@ -159,11 +159,27 @@ Income = income_mapping.get(input22)
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
  
-model_file = 'diabetes_model.pkl'
-model = joblib.load(model_file)
+# model_file = 'diabetes_model.pkl'
+# model = joblib.load(model_file)
 
 df = pd.read_csv('Diabetes_Data_Processed.csv')
-    
+
+# Preprocess the data (this is an example, adjust according to your dataset)
+X = df.drop('Diabetes_Binary', axis=1)
+y = df['Diabetes_Binary']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train the model
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+# Calculate metrics
+accuracy = accuracy_score(y_test, y_pred)
+
 # Button to trigger prediction
 if st.button('Predict'):
     prediction = model.predict(inputs)  # Replace with your model's prediction method
@@ -174,5 +190,4 @@ if st.button('Predict'):
         st.write("The model predicts: **No**, Low Risk of Heart Disease.")
 
     # Calculate the accuracy on the test dataset
-    accuracy = model.score(X_test, y_test)
     st.write(f"Model Accuracy: **{accuracy * 100:.2f}%**")
