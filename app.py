@@ -166,4 +166,8 @@ inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDisea
 # Button to trigger prediction
 if st.button('Predict'):
     prediction = model.predict(inputs)  # Replace with your model's prediction method
-    st.write('Predicted Value:', prediction[0])
+    # Display the result as "Yes" or "No"
+    if prediction == 1:
+        st.write("The model predicts: **Yes**, High Risk of Heart Disease.")
+    else:
+        st.write("The model predicts: **No**, Low Risk of Heart Disease.")
