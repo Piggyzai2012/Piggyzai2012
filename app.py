@@ -65,7 +65,7 @@ if input4:
 if input21:
     # Try to convert input to integer
     try:
-        Weight = int(input21)
+        input21 = int(input21)
         # Check if weight is within the range 23 to 295
         if not(23 <= Weight <= 295):
             st.write('Please enter a value between 23 and 295 kg.')
@@ -98,13 +98,11 @@ education_mapping = {
     'College 1 year to 3 years (Some college or technical school)': 5,
     'College 4 years or more (College graduate)': 6
 }
-Height = int(input4)/ 100
-Weight = int(input21)
 
 HighBP = 1 if input1 == 'Yes' else 0 
 HighChol = 1 if input2 == 'Yes' else 0 
 CholCheck = 1 if input3 == 'Yes' else 0 
-BMI = Weight /(Height * Height)
+BMI = input21 /(Height * Height)
 Smoker = input5
 Stroke = input6
 HeartDiseaseorAttack = input7
