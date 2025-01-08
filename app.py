@@ -57,7 +57,7 @@ if input19.isdigit():
     try:
         input19 = int(input19)
         
-        if 18 <= age <= 150:
+        if 18 <= input19 <= 150:
             if not(18 <= input19 <= 150):
                 st.write('Please enter a value between 18 and 150.')
             elif 18 <= input19 <= 24:
