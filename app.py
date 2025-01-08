@@ -159,7 +159,7 @@ Income = income_mapping.get(input22)
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
  
-model_file = 'diabetes_model.pkl'
+model_file = 'diabetes_model.joblib'
 if os.path.exists(model_file):
     model = joblib.load(model_file)
     st.write("Model loaded successfully!")
