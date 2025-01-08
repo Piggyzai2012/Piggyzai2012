@@ -15,8 +15,6 @@ import pandas as pd
 import matplotlib as plt
 from scipy.stats import chi2_contingency
 from scipy.stats import pointbiserialr
-import matplotlib.pyplot as plt
-import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import KFold
 from imblearn.over_sampling import SMOTE
@@ -25,7 +23,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
-from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix, classification_report, ConfusionMatrixDisplay
 from sklearn.model_selection import train_test_split
