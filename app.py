@@ -156,19 +156,11 @@ Sex = 1 if input18 == 'Male' else 2
 Education = education_mapping.get(input20)
 Income = income_mapping.get(input22)
 
-import os
-
-if os.path.exists('diabetes_model.pkl'):
-    model = joblib.load('diabetes_model.pkl')
-    print("Model loaded successfully!")
-else:
-    print("Model file not found.")
-
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
  
-# Load the model from the saved .pkl file
-model = joblib.load('diabetes_model.pkl')
+# # Load the model from the saved .pkl file
+# model = joblib.load('diabetes_model.pkl')
     
 # Button to trigger prediction
 if st.button('Predict'):
