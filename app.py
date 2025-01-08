@@ -13,10 +13,6 @@ import joblib
 import numpy as np
 import pandas as pd
 
-# Load the trained model (make sure the model file is in the same directory)
-with open('diabetes_model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
-
 # Define the app layout
 st.title('Diabetes Prediction')
 
@@ -165,6 +161,11 @@ st.write('Your Age is ', Age)
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
 
+
+# Load the trained model (make sure the model file is in the same directory)
+with open('diabetes_model.pkl', 'rb') as model_file:
+    model = pickle.load(model_file)
+    
 # Button to trigger prediction
 if st.button('Predict'):
     prediction = model.predict(inputs)  # Replace with your model's prediction method
