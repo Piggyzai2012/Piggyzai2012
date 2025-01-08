@@ -173,5 +173,6 @@ if st.button('Predict'):
     else:
         st.write("The model predicts: **No**, Low Risk of Heart Disease.")
 
-    accuracy = model.score(X_test, y_test)  # Model accuracy on the test set
+    # Calculate the accuracy on the test dataset
+    accuracy = model.score(X_test, y_test)
     st.write(f"Model Accuracy: **{accuracy * 100:.2f}%**")
