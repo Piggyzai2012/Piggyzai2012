@@ -162,9 +162,10 @@ inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDisea
 model_file = 'diabetes_model.pkl'
 model = joblib.load(model_file)
 
-accuracy = model.score(X_test, y_test)
-
 df = pd.read_csv('Diabetes_Data_Processed.csv')
+
+
+accuracy = model.score(X_test, y_test)
 
 # Button to trigger prediction
 if st.button('Predict'):
