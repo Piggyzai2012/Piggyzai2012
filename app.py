@@ -59,33 +59,7 @@ if input19:
         # Check if age is within the range 18 to 150
         if not(18 <= input19 <= 150):
             st.write('Please enter a value between 18 and 150.')
-    except ValueError:
-        st.write('Please enter a valid number.')
-        
-if input4:
-    # Try to convert input to integer
-    try:
-        Height = int(input4)/ 100
-        # Check if height is within the range 90 to 250
-        if not(0.90 <= Height <= 2.44):
-            st.write('Please enter a value between 90 and 244 cm.')
-    except ValueError:
-        st.write('Please enter a valid number.')
-
-if input21:
-    # Try to convert input to integer
-    try:
-        input21 = int(input21)
-        # Check if weight is within the range 23 to 295
-        if not(23 <= input21 <= 295):
-            st.write('Please enter a value between 23 and 295 kg.')
-    except ValueError:
-        st.write('Please enter a valid number.')
-        
-if input19:
-    try:
-        # Determine the age group
-        if 18 <= input19 <= 24:
+        elif 18 <= input19 <= 24:
             age = 1
         elif 25 <= input19 <= 29:
             age_group = 2
@@ -112,7 +86,27 @@ if input19:
         elif input19 >= 80:
             age_group = 13
     except ValueError:
-        st.write("Please enter a valid number for age.")
+        st.write('Please enter a valid number.')
+        
+if input4:
+    # Try to convert input to integer
+    try:
+        Height = int(input4)/ 100
+        # Check if height is within the range 90 to 250
+        if not(0.90 <= Height <= 2.44):
+            st.write('Please enter a value between 90 and 244 cm.')
+    except ValueError:
+        st.write('Please enter a valid number.')
+
+if input21:
+    # Try to convert input to integer
+    try:
+        input21 = int(input21)
+        # Check if weight is within the range 23 to 295
+        if not(23 <= input21 <= 295):
+            st.write('Please enter a value between 23 and 295 kg.')
+    except ValueError:
+        st.write('Please enter a valid number.')
         
 health_mapping = {
     'Excellent': 5,
