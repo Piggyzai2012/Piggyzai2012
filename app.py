@@ -138,7 +138,7 @@ education_mapping = {
 HighBP = 1 if input1 == 'Yes' else 0 
 HighChol = 1 if input2 == 'Yes' else 0 
 CholCheck = 1 if input3 == 'Yes' else 0 
-BMI = input21 /(Height * Height)
+BMI = int(input21) /(Height * Height)
 Smoker = 1 if input5 == 'Yes' else 0 
 Stroke = 1 if input6 == 'Yes' else 0 
 HeartDiseaseorAttack = 1 if input7 == 'Yes' else 0 
