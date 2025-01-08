@@ -21,34 +21,34 @@ st.title('Diabetes Prediction')
 st.write('Input Your Details')
 
 # Create two columns
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 
 # Create user input fields (modify these based on your model's features)
 input1 = st.selectbox('Do you have high blood pressure?', ['No', 'Yes'])
-input2 = st.number_input('High Cholesterol', min_value=0.0, max_value=100.0, value=30.0)
-input3 = st.number_input('Cholesterol Check', min_value=0.0, max_value=100.0, value=30.0)
+input2 = st.selectbox('Do you have high cholesterol?', ['No', 'Yes'])
+input3 = st.selectbox('Cholesterol check within past five years?', ['No', 'Yes'])
 with col1:
     input19 = st.text_input('Age', '')
-with col2:
     input4 = st.text_input('Height (cm)', '')
-with col3:
+    input20 = st.selectbox('Education', min_value=0.0, max_value=100.0, value=30.0)
+with col2:
+    input18 = st.selectbox('Gender', ['Male', 'Female'])
     input21 = st.text_input('Weight (kg)', '')
-input5 = st.number_input('Smoker', min_value=0.0, max_value=100.0, value=30.0)
-input6 = st.number_input('Stroke', min_value=0.0, max_value=100.0, value=30.0)
-input7 = st.number_input('Heart Disease or Attack', min_value=0.0, max_value=100.0, value=30.0)
-input8 = st.number_input('PhysActivity', min_value=0.0, max_value=100.0, value=30.0)
-input9 = st.number_input('Fruits', min_value=0.0, max_value=100.0, value=30.0)
-input10 = st.number_input('Veggies', min_value=0.0, max_value=100.0, value=30.0)
-input11 = st.number_input('Heavy Alcohol Consumption', min_value=0.0, max_value=100.0, value=30.0)
-input12 = st.number_input('Any Health care', min_value=0.0, max_value=100.0, value=30.0)
-input13 = st.number_input('No Doctor because Cost', min_value=0.0, max_value=100.0, value=30.0)
-input14 = st.number_input('General Health', min_value=0.0, max_value=100.0, value=30.0)
-input15 = st.number_input('Mental Health', min_value=0.0, max_value=100.0, value=30.0)
-input16 = st.number_input('Physical Health', min_value=0.0, max_value=100.0, value=30.0)
-input17 = st.number_input('Diff Walk', min_value=0.0, max_value=100.0, value=30.0)
-input18 = st.number_input('Gender', min_value=0.0, max_value=100.0, value=30.0)
-input20 = st.number_input('Education', min_value=0.0, max_value=100.0, value=30.0)
-input22 = st.number_input('Income', min_value=0.0, max_value=100.0, value=30.0)
+    input22 = st.selectbox('Income', min_value=0.0, max_value=100.0, value=30.0)
+
+input5 = st.selectbox('Have you smoked at least 100 cigarettes in your entire life?', ['No', 'Yes'])
+input6 = st.selectbox('Do you have stroke', ['No', 'Yes'])
+input7 = st.selectbox('Do you have coronary heart disease (CHD) or myocardial infarction (MI)', ['No', 'Yes'])
+input8 = st.selectbox('Did you engage in physical activity or exercise during the past 30 days', ['No', 'Yes'])
+input9 = st.selectbox('Do you consume fruit 1 or more times per day?', ['No', 'Yes'])
+input10 = st.selectbox('Do you consume vegetables 1 or more times per day?', ['No', 'Yes'])
+input11 = st.selectbox('Are you heavy drinkers?', ['No', 'Yes'])
+input12 = st.selectbox('Do you have any kind of health care coverage?', ['No', 'Yes'])
+input13 = st.selectbox('Was there a time in the past 12 months when you needed to see a doctor but could not because of cost?', ['No', 'Yes'])
+input14 = st.selectbox('Would you say that in general your health is', min_value=0.0, max_value=100.0, value=30.0)
+input15 = st.selectbox('How many days during the past 30 days was your mental health not good?', min_value=0.0, max_value=100.0, value=30.0)
+input16 = st.selectbox('How many days during the past 30 days was your physical health not good?', min_value=0.0, max_value=100.0, value=30.0)
+input17 = st.selectbox('Do you have serious difficulty walking or climbing stairs?', ['No', 'Yes'])
 
 if input4:
     # Try to convert input to integer
@@ -72,8 +72,8 @@ if input21:
         
 
 HighBP = 1 if input1 == 'Yes' else 0 
-HighChol = input2
-CholCheck = input3
+HighChol = 1 if input2 == 'Yes' else 0 
+CholCheck = 1 if input3 == 'Yes' else 0 
 BMI = input21 /(Height * Height)
 Smoker = input5
 Stroke = input6
