@@ -162,8 +162,8 @@ st.write('Your Age is ', Age)
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
 
 
-# Load the saved heart disease prediction model
-model = joblib.load('diabetes_model.joblib')
+# Load the model from the saved .pkl file
+model = joblib.load('diabetes_model.pkl')
     
 # Button to trigger prediction
 if st.button('Predict'):
