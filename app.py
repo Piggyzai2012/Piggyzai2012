@@ -98,6 +98,8 @@ education_mapping = {
     'College 1 year to 3 years (Some college or technical school)': 5,
     'College 4 years or more (College graduate)': 6
 }
+Height = int(input4)/ 100
+Weight = int(input21)
 
 HighBP = 1 if input1 == 'Yes' else 0 
 HighChol = 1 if input2 == 'Yes' else 0 
