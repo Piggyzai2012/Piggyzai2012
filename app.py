@@ -164,7 +164,7 @@ if os.path.exists(model_file):
     model = joblib.load(model_file)
     st.write("Model loaded successfully!")
 else:
-    st.write(f"Error: {model_file}
+    st.write(f"Error: {model_file})
     
 # Button to trigger prediction
 if st.button('Predict'):
