@@ -164,6 +164,6 @@ st.write('Your Age is ', Age)
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
 
 # Button to trigger prediction
-# if st.button('Predict'):
-    # prediction = model.predict(inputs)  # Replace with your model's prediction method
-    # st.write('Predicted Value:', prediction[0])
+if st.button('Predict'):
+    prediction = model.predict(inputs)  # Replace with your model's prediction method
+    st.write('Predicted Value:', prediction[0])
