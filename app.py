@@ -52,42 +52,42 @@ input14 = st.radio('Would you say that in general your health is', options=['Exc
 input15 = st.slider('How many days during the past 30 days was your mental health not good?', min_value=0, max_value=30, value=15)
 input16 = st.slider('How many days during the past 30 days was your physical health not good?', min_value=0, max_value=30, value=15)
 
-# if input19.isdigit():
-#     # Try to convert input to integer
-#     try:
-#         input19 = int(input19)
+if input19.isdigit():
+    # Try to convert input to integer
+    try:
+        input19 = int(input19)
         
-#         if 18 <= input19 <= 150:
-#             if 18 <= input19 <= 24:
-#                 age = 1
-#             elif 25 <= input19 <= 29:
-#                 age_group = 2
-#             elif 30 <= input19 <= 34:
-#                 age_group = 3
-#             elif 35 <= input19 <= 39:
-#                 age_group = 4
-#             elif 40 <= input19 <= 44:
-#                 age_group = 5
-#             elif 45 <= input19 <= 49:
-#                 age_group = 6
-#             elif 50 <= input19 <= 54:
-#                 age_group = 7
-#             elif 55 <= input19 <= 59:
-#                 age_group = 8
-#             elif 60 <= input19 <= 64:
-#                 age_group = 9
-#             elif 65 <= input19 <= 69:
-#                 age_group = 10
-#             elif 70 <= input19 <= 74:
-#                 age_group = 11
-#             elif 75 <= input19 <= 79:
-#                 age_group = 12
-#             elif input19 >= 80:
-#                 age_group = 13
-#         else:
-#             st.write("Please enter an age between 18 and 150.")
-#     except ValueError:
-#         st.write("Please enter a valid numeric age.")
+        if 18 <= input19 <= 150:
+            if 18 <= input19 <= 24:
+                age = 1
+            elif 25 <= input19 <= 29:
+                age_group = 2
+            elif 30 <= input19 <= 34:
+                age_group = 3
+            elif 35 <= input19 <= 39:
+                age_group = 4
+            elif 40 <= input19 <= 44:
+                age_group = 5
+            elif 45 <= input19 <= 49:
+                age_group = 6
+            elif 50 <= input19 <= 54:
+                age_group = 7
+            elif 55 <= input19 <= 59:
+                age_group = 8
+            elif 60 <= input19 <= 64:
+                age_group = 9
+            elif 65 <= input19 <= 69:
+                age_group = 10
+            elif 70 <= input19 <= 74:
+                age_group = 11
+            elif 75 <= input19 <= 79:
+                age_group = 12
+            elif input19 >= 80:
+                age_group = 13
+        else:
+            st.write("Please enter an age between 18 and 150.")
+    except ValueError:
+        st.write("Please enter a valid numeric age.")
         
 if input4:
     # Try to convert input to integer
@@ -158,7 +158,7 @@ Sex = 1 if input18 == 'Male' else 2
 Education = education_mapping.get(input20)
 Income = income_mapping.get(input22)
 
-# st.write(f'Your Age is ', Age)
+st.write(f'Your Age is ', Age)
 
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
