@@ -161,7 +161,14 @@ st.write('Your Age is ', Age)
 # Combine inputs into a single array for prediction
 inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]])
 
+import os
 
+if os.path.exists('diabetes_model.pkl'):
+    model = joblib.load('diabetes_model.pkl')
+    print("Model loaded successfully!")
+else:
+    print("Model file not found.")
+    
 # Load the model from the saved .pkl file
 model = joblib.load('diabetes_model.pkl')
     
