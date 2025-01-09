@@ -188,7 +188,7 @@ model.fit(X_train_res, y_train_res)
 y_pred = model.predict(X_test)
 
 # Calculate metrics
-auc_score = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
+auc_score = roc_auc_score(y_test, model.predict_proba(X_test))
 
 model_file = 'diabetes_model.pkl'
 model = joblib.load(model_file)
