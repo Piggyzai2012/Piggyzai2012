@@ -15,6 +15,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split, KFold
 from imblearn.over_sampling import SMOTE
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import auc, roc_auc_score
 
 # Define the app layout
 st.title('Diabetes Prediction')
@@ -189,12 +190,7 @@ model.fit(X_train_res, y_train_res)
 y_pred = model.predict(X_test)
 
 # Calculate metrics
-accuracy = accuracy_score(y_test, y_pred)
-precision = precision_score(y_test, y_pred)
-recall = recall_score(y_test, y_pred)
-f1 = f1_score(y_test, y_pred)
 auc_score = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
-cm = confusion_matrix(y_test, y_pred)
 
 # Button to trigger prediction
 if st.button('Predict'):
