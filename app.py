@@ -199,9 +199,10 @@ if st.button('Predict'):
     # Display the result as "Yes" or "No"
     if prediction == 1:
         st.write("The model predicts: **Yes**, High Risk of Heart Disease.")
+        st.write('Model Accuracy: 81.8%')
     else:
         st.write("The model predicts: **No**, Low Risk of Heart Disease.")
-
+        st.write('Model Accuracy: 81.8%')
     # # Calculate the accuracy on the test dataset
     st.write('Model Accuracy: 81.8%')
     # st.write(f"Model Accuracy: **{auc_score * 100:.2f}%**")
