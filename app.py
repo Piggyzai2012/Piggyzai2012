@@ -164,27 +164,27 @@ inputs = np.array([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDisea
 # Load the dataset
 df = pd.read_csv('Diabetes_Data_Processed.csv')
 
-X = df.drop('Diabetes_Binary', axis=1)
-y = df['Diabetes_Binary']
+# X = df.drop('Diabetes_Binary', axis=1)
+# y = df['Diabetes_Binary']
 
-kf = KFold(n_splits=10, shuffle=True, random_state=10)
-for train_index, test_index in kf.split(X):
-    X_train, X_test = X.iloc[train_index], X.iloc[test_index]
-    y_train, y_test = y.iloc[train_index], y.iloc[test_index]
+# kf = KFold(n_splits=10, shuffle=True, random_state=10)
+# for train_index, test_index in kf.split(X):
+#     X_train, X_test = X.iloc[train_index], X.iloc[test_index]
+#     y_train, y_test = y.iloc[train_index], y.iloc[test_index]
 
-smote = SMOTE(random_state=10)
+# smote = SMOTE(random_state=10)
 
-X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
+# X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
 
-X_train_res = X_train_res.to_numpy()
-X_test = X_test.to_numpy()
+# X_train_res = X_train_res.to_numpy()
+# X_test = X_test.to_numpy()
 
-models = {
-    'Logistic Regression': LogisticRegression(max_iter=1000, random_state=42)
-}
+# models = {
+#     'Logistic Regression': LogisticRegression(max_iter=1000, random_state=42)
+# }
 
-#Initialize result
-results = []
+# #Initialize result
+# results = []
 
 # Convert results to DataFrame for comparison
 results_df = pd.DataFrame(results)
@@ -192,28 +192,28 @@ results_df = pd.DataFrame(results)
 model_file = 'diabetes_model.pkl'
 model = joblib.load(model_file)
 
-# Train and evaluate models
-for name, model in models.items():
-    print(f"Training {name}...")
-    model.fit(X_train_res, y_train_res)
-    y_pred = model.predict(X_test)
+# # Train and evaluate models
+# for name, model in models.items():
+#     print(f"Training {name}...")
+#     model.fit(X_train_res, y_train_res)
+#     y_pred = model.predict(X_test)
 
-    # Calculate metrics
-    accuracy = accuracy_score(y_test, y_pred)
-    precision = precision_score(y_test, y_pred)
-    recall = recall_score(y_test, y_pred)
-    f1 = f1_score(y_test, y_pred)
-    auc_score = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
-    cm = confusion_matrix(y_test, y_pred)
+#     # Calculate metrics
+#     accuracy = accuracy_score(y_test, y_pred)
+#     precision = precision_score(y_test, y_pred)
+#     recall = recall_score(y_test, y_pred)
+#     f1 = f1_score(y_test, y_pred)
+#     auc_score = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
+#     cm = confusion_matrix(y_test, y_pred)
 
-    results.append({
-        'Model': name,
-        'Accuracy': accuracy,
-        'Precision': precision,
-        'Recall': recall,
-        'F1 Score': f1,
-        'AUC Score': auc_score
-    })
+#     results.append({
+#         'Model': name,
+#         'Accuracy': accuracy,
+#         'Precision': precision,
+#         'Recall': recall,
+#         'F1 Score': f1,
+#         'AUC Score': auc_score
+#     })
     
 # Button to trigger prediction
 if st.button('Predict'):
@@ -225,4 +225,4 @@ if st.button('Predict'):
         st.write("The model predicts: **No**, Low Risk of Heart Disease.")
 
     # Calculate the accuracy on the test dataset
-    st.write(f"Model Accuracy: **{auc_score * 100:.2f}%**")
+    # st.write(f"Model Accuracy: **{auc_score * 100:.2f}%**")
