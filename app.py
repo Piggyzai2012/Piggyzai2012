@@ -181,9 +181,6 @@ X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
 X_train_res = X_train_res.to_numpy()
 X_test = X_test.to_numpy()
 
-model_file = 'diabetes_model.pkl'
-model = joblib.load(model_file)
-
 # Train and evaluate models
 model = LogisticRegression(max_iter=1000, random_state=42)
 model.fit(X_train_res, y_train_res)
@@ -191,6 +188,9 @@ y_pred = model.predict(X_test)
 
 # Calculate metrics
 auc_score = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
+
+model_file = 'diabetes_model.pkl'
+model = joblib.load(model_file)
 
 # Button to trigger prediction
 if st.button('Predict'):
@@ -202,4 +202,4 @@ if st.button('Predict'):
         st.write("The model predicts: **No**, Low Risk of Heart Disease.")
 
     # Calculate the accuracy on the test dataset
-    # st.write(f"Model Accuracy: **{auc_score * 100:.2f}%**")
+    st.write(f"Model Accuracy: **{auc_score * 100:.2f}%**")
