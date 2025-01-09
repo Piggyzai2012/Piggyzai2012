@@ -187,7 +187,7 @@ df = pd.read_csv('Diabetes_Data_Processed.csv')
 # results = []
 
 # Convert results to DataFrame for comparison
-results_df = pd.DataFrame(results)
+# results_df = pd.DataFrame(results)
 
 model_file = 'diabetes_model.pkl'
 model = joblib.load(model_file)
