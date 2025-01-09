@@ -180,8 +180,8 @@ X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
 X_train_res = X_train_res.to_numpy()
 X_test = X_test.to_numpy()
 
-# model_file = 'diabetes_model.pkl'
-# model = joblib.load(model_file)
+model_file = 'diabetes_model.pkl'
+model = joblib.load(model_file)
 
 # Train and evaluate models
 model = LogisticRegression(max_iter=1000, random_state=42)
