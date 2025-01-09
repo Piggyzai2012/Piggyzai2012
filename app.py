@@ -179,25 +179,21 @@ X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
 X_train_res = X_train_res.to_numpy()
 X_test = X_test.to_numpy()
 
-models = {
-    'Logistic Regression': LogisticRegression(max_iter=1000, random_state=42)
-}
 model_file = 'diabetes_model.pkl'
 model = joblib.load(model_file)
 
 # Train and evaluate models
-for name, model in models.items():
-    print(f"Training {name}...")
-    model.fit(X_train_res, y_train_res)
-    y_pred = model.predict(X_test)
+model = LogisticRegression(max_iter=1000, random_state=42)
+model.fit(X_train_res, y_train_res)
+y_pred = model.predict(X_test)
 
-    # Calculate metrics
-    accuracy = accuracy_score(y_test, y_pred)
-    precision = precision_score(y_test, y_pred)
-    recall = recall_score(y_test, y_pred)
-    f1 = f1_score(y_test, y_pred)
-    auc_score = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
-    cm = confusion_matrix(y_test, y_pred)
+# Calculate metrics
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred)
+auc_score = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
+cm = confusion_matrix(y_test, y_pred)
 
 # Button to trigger prediction
 if st.button('Predict'):
