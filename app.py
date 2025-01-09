@@ -203,5 +203,5 @@ if st.button('Predict'):
         st.write("The model predicts: **No**, Low Risk of Heart Disease.")
 
     # # Calculate the accuracy on the test dataset
-    st.write("Model Accuracy: 81.8%")
+    st.write('Model Accuracy: 81.8%')
     # st.write(f"Model Accuracy: **{auc_score * 100:.2f}%**")
