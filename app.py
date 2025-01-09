@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split, KFold
 from imblearn.over_sampling import SMOTE
+from sklearn.linear_model import LogisticRegression
 
 # Define the app layout
 st.title('Diabetes Prediction')
