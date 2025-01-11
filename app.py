@@ -198,9 +198,9 @@ if st.button('Predict'):
     prediction = model.predict(inputs)  # Replace with your model's prediction method
     # Display the result as "Yes" or "No"
     if prediction == 1:
-        st.write("The model predicts: **Yes**, High Risk of Heart Disease.")
+        st.write("The model predicts: **Yes**, High Risk of Diabetes.")
     else:
-        st.write("The model predicts: **No**, Low Risk of Heart Disease.")
+        st.write("The model predicts: **No**, Low Risk of Diabetes.")
 
     # # Calculate the accuracy on the test dataset
     st.write('Model Accuracy: 81.8%')
